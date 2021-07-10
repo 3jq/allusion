@@ -2,11 +2,13 @@ package dev.sl33py.allusion.client.module;
 
 import dev.sl33py.allusion.Allusion;
 import dev.sl33py.allusion.api.setting.Setting;
+import net.minecraft.client.MinecraftClient;
 
 import java.util.List;
 
 public class Module {
 
+    protected MinecraftClient mc = MinecraftClient.getInstance();
     private String name;
     private String description;
     private Category category;
