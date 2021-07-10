@@ -8,7 +8,8 @@ public class Sprint extends Module {
         setEnabled(true);
     }
 
-    @Override public void onUpdate() {
-        if(mc.player.forwardSpeed != 0f || mc.player.sidewaysSpeed != 0f) mc.player.setSprinting(true);
+    @Override
+    public void onUpdate() {
+        if (mc.player.forwardSpeed != 0f || mc.player.sidewaysSpeed != 0f) mc.player.setSprinting(true);
     }
 }
