@@ -21,8 +21,8 @@ public class Allusion implements ModInitializer {
     public void onInitialize() {
         log.info("Allusion started.");
 
-        moduleManager = new ModuleManager();
         settingManager = new SettingManager();
+        moduleManager = new ModuleManager();
 
         log.info("Allusion initialized.");
         log.info("https://github.com/fuckyouthinkimboogieman/allusion");
