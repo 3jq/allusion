@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "allusion",
+  "version": "b1",
+
+  "name": "Allusion",
+  "description": "A 1.16.5 fabric mod",
+  "authors": [
+    "sl33py (fuckyouthinkimboogieman)"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "GNU General Public License v3.0",
+  "icon": "",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.srgantmoomoo.bedroom.Main"
+    ]
+  },
+  "mixins": [
+    "bed.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
