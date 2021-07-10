@@ -31,6 +31,7 @@ bin
 
 # Fabric
 
+run/
 logs/
 .fabric/
 .mixin.out/
