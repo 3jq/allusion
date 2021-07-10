@@ -19,11 +19,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "me.srgantmoomoo.bedroom.Main"
+      "dev.sl33py.allusion.Allusion"
     ]
   },
   "mixins": [
-    "bed.mixins.json"
+    "allusion.mixins.json"
   ],
 
   "depends": {
