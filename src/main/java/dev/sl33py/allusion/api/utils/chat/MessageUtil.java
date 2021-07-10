@@ -3,6 +3,7 @@ package dev.sl33py.allusion.api.utils.chat;
 import dev.sl33py.allusion.Allusion;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.LiteralText;
+import net.minecraft.util.Formatting;
 
 public class MessageUtil {
 

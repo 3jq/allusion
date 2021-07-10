@@ -1,8 +1,7 @@
 package dev.sl33py.allusion.client.command;
 
-import dev.sl33py.allusion.api.utils.chat.Formatting;
 import dev.sl33py.allusion.api.utils.chat.MessageUtil;
-import dev.sl33py.allusion.client.module.Module;
+import net.minecraft.util.Formatting;
 import org.reflections.Reflections;
 
 import java.util.ArrayList;
