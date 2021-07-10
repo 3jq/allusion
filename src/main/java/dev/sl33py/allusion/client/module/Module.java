@@ -1,5 +1,10 @@
 package dev.sl33py.allusion.client.module;
 
+import dev.sl33py.allusion.Allusion;
+import dev.sl33py.allusion.api.setting.Setting;
+
+import java.util.List;
+
 public class Module {
 
     private String name;
@@ -64,6 +69,24 @@ public class Module {
     public void onEnable() {}
 
     public void onDisable() {}
+
+    public Setting<Boolean> register(String name, boolean value) {
+        Setting<Boolean> s = new Setting<>(this, name, value);
+        Allusion.settingManager.register(s);
+        return s;
+    }
+
+    public Setting<Double> register(String name, double value, double min, double max, double inc) {
+        Setting<Double> s = new Setting<>(this, name, value, min, max, inc);
+        Allusion.settingManager.register(s);
+        return s;
+    }
+
+    public Setting<String> register(String name, String value, List<String> modes) {
+        Setting<String> s = new Setting<>(this, name, value, modes);
+        Allusion.settingManager.register(s);
+        return s;
+    }
 
     public enum Category {
         Combat,

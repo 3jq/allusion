@@ -1,5 +1,6 @@
 package dev.sl33py.allusion;
 
+import dev.sl33py.allusion.api.setting.SettingManager;
 import dev.sl33py.allusion.client.module.ModuleManager;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
@@ -14,12 +15,14 @@ public class Allusion implements ModInitializer {
     Logger log = LogManager.getLogger(name);
 
     public static ModuleManager moduleManager;
+    public static SettingManager settingManager;
 
     @Override
     public void onInitialize() {
         log.info("Allusion started.");
 
         moduleManager = new ModuleManager();
+        settingManager = new SettingManager();
 
         log.info("Allusion initialized.");
         log.info("https://github.com/fuckyouthinkimboogieman/allusion");
