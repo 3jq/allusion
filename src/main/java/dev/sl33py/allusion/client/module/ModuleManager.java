@@ -32,16 +32,15 @@ public class ModuleManager {
     }
 
     public Module getModule(String name) {
-        for (Module module : modules) if (module.getName().equalsIgnoreCase(name)) return module;
-        return null;
+        return modules.stream().filter(s -> s.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
     }
 
     public ArrayList<Module> getModulesByCategory(Module.Category category) {
         ArrayList<Module> modulesInCategory = new ArrayList<>();
 
-        for (Module module : modules) {
-            if (module.getCategory() == category) modulesInCategory.add(module);
-        }
+        modules.forEach(m -> {
+            if(m.getCategory().equals(category)) modulesInCategory.add(m);
+        });
 
         return modulesInCategory;
     }
