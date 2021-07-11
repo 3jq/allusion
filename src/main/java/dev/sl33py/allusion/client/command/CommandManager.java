@@ -38,12 +38,13 @@ public class CommandManager {
     public void handleCommand(String commandName) {
         boolean found = false;
         String originalName;
+        String[] args = commandName.split(" ");
 
         for (Command command : commands) {
             originalName = prefix + command.name;
             if (originalName.equalsIgnoreCase(commandName)) {
                 found = true;
-                command.handle();
+                command.handle(args);
                 return;
             }
 
@@ -52,7 +53,7 @@ public class CommandManager {
 
                 if (originalName.equalsIgnoreCase(commandName)) {
                     found = true;
-                    command.handle();
+                    command.handle(args);
                     return;
                 }
             }

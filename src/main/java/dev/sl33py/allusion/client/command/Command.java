@@ -12,6 +12,6 @@ public abstract class Command {
         this.aliases = aliases;
     }
 
-    public abstract void handle();
+    public abstract void handle(String[] args);
 
 }
