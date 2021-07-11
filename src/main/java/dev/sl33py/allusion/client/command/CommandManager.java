@@ -43,7 +43,7 @@ public class CommandManager {
 
         String originalName = message.split(" ")[0];
         for (Command command : commands) {
-            if (command.name == originalName || command.aliases.contains(originalName)) {
+            if (command.name.equalsIgnoreCase(originalName) || command.aliases.contains(originalName)) {
                 found = true;
                 command.handle(Arrays.copyOfRange(message.split(" "), 1, message.split(" ").length));
                 return;
