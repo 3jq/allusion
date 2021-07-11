@@ -5,6 +5,7 @@ import net.minecraft.util.Formatting;
 import org.reflections.Reflections;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Set;
 
@@ -37,25 +38,15 @@ public class CommandManager {
 
     public void handleCommand(String commandName) {
         boolean found = false;
-        String originalName;
+        String message = commandName.substring(prefix.length());
         String[] args = commandName.split(" ");
 
+        String originalName = message.split(" ")[0];
         for (Command command : commands) {
-            originalName = prefix + command.name;
-            if (originalName.equalsIgnoreCase(commandName)) {
+            if (command.name == originalName || command.aliases.contains(originalName)) {
                 found = true;
-                command.handle(args);
+                command.handle(Arrays.copyOfRange(message.split(" "), 1, message.split(" ").length));
                 return;
-            }
-
-            for (String alias : command.aliases) {
-                originalName = prefix + alias;
-
-                if (originalName.equalsIgnoreCase(commandName)) {
-                    found = true;
-                    command.handle(args);
-                    return;
-                }
             }
         }
 

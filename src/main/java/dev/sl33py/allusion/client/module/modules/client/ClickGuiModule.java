@@ -17,7 +17,7 @@ public class ClickGuiModule extends Module {
 
     public ClickGuiModule() {
         super("ClickGui", "Shows client ClickGui", Category.Client);
-        setKey(GLFW.GLFW_KEY_INSERT);
+        setKey(GLFW.GLFW_KEY_RIGHT_CONTROL);
         INSTANCE = this;
     }
 
