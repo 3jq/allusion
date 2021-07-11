@@ -11,7 +11,7 @@ public class HelpCommand extends Command {
     }
 
     @Override
-    public void handle() {
+    public void handle(String[] args) {
         String commandsList = "Commands (" + Allusion.commandManager.commands.size() + "): ";
 
         for (Command command : Allusion.commandManager.commands) {
