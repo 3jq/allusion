@@ -20,6 +20,6 @@ public class HelpCommand extends Command {
 
         commandsList += ".";
 
-        MessageUtil.addChatMessage(commandsList.substring(0, commandsList.length() - 2) + ".");
+        MessageUtil.addChatMessage(commandsList.substring(0, commandsList.length() - 3) + ".");
     }
 }
