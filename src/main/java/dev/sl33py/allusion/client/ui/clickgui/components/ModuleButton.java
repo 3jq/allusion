@@ -36,8 +36,8 @@ public class ModuleButton extends Component {
         this.open = false;
         this.height = 16;
         int settingY = this.offset + 16;
-        if(!Allusion.settingManager.getSettings(module).isEmpty()) {
-            for(Setting s : Allusion.settingManager.getSettings(module)) {
+        if (!Allusion.settingManager.getSettings(module).isEmpty()) {
+            for (Setting s : Allusion.settingManager.getSettings(module)) {
                 switch (s.getType()) {
                     case B:
                         components.add(new BooleanButton(s, this, settingY));
@@ -57,7 +57,8 @@ public class ModuleButton extends Component {
         }
     }
 
-    @Override public void setOffset(final int offset) {
+    @Override
+    public void setOffset(final int offset) {
         this.offset = offset;
         int settingY = this.offset + 16;
         for (Component c : components) {
@@ -66,12 +67,14 @@ public class ModuleButton extends Component {
         }
     }
 
-    @Override public int getHeight() {
+    @Override
+    public int getHeight() {
         if (open) return 16 * (components.size() + 1);
         return 16;
     }
 
-    @Override public void updateComponent(final double mouseX, final double mouseY) {
+    @Override
+    public void updateComponent(final double mouseX, final double mouseY) {
         isHovered = isHovered(mouseX, mouseY);
         if (!components.isEmpty()) {
             components.forEach(c -> {
@@ -80,7 +83,8 @@ public class ModuleButton extends Component {
         }
     }
 
-    @Override public void mouseClicked(final double mouseX, final double mouseY, final int button) {
+    @Override
+    public void mouseClicked(final double mouseX, final double mouseY, final int button) {
         if (isHovered(mouseX, mouseY) && button == 0) {
             module.toggle();
         }
@@ -93,19 +97,22 @@ public class ModuleButton extends Component {
         });
     }
 
-    @Override public void mouseReleased(final double mouseX, final double mouseY, final int mouseButton) {
+    @Override
+    public void mouseReleased(final double mouseX, final double mouseY, final int mouseButton) {
         components.forEach(c -> {
             c.mouseReleased(mouseX, mouseY, mouseButton);
         });
     }
 
-    @Override public void keyTyped(final int key) {
+    @Override
+    public void keyTyped(final int key) {
         components.forEach(c -> {
             c.keyTyped(key);
         });
     }
 
-    @Override public void render() {
+    @Override
+    public void render() {
         DrawableHelper.fill(new MatrixStack(), frame.getX(), frame.getY() + offset, frame.getX() + frame.getWidth(), frame.getY() + offset + 16, isHovered ? new Color(0, 0, 0, 75).getRGB() : new Color(0, 0, 0, 60).getRGB());
 
         DrawableHelper.fill(new MatrixStack(), frame.getX(), frame.getY() + offset, frame.getX() + 1, frame.getY() + offset + getHeight(), ClickGUI.color.getRGB());

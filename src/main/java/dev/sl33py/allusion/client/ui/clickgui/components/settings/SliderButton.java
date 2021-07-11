@@ -31,21 +31,25 @@ public class SliderButton extends Component {
         this.offset = offset;
     }
 
-    @Override public void setOffset(final int offset) {
+    @Override
+    public void setOffset(final int offset) {
         this.offset = offset;
     }
 
-    @Override public void mouseClicked(final double mouseX, final double mouseY, final int button) {
+    @Override
+    public void mouseClicked(final double mouseX, final double mouseY, final int button) {
         if (isHovered(mouseX, mouseY) && button == 0 && this.button.open) {
             dragging = true;
         }
     }
 
-    @Override public void mouseReleased(final double mouseX, final double mouseY, final int mouseButton) {
+    @Override
+    public void mouseReleased(final double mouseX, final double mouseY, final int mouseButton) {
         dragging = false;
     }
 
-    @Override public void updateComponent(final double mouseX, final double mouseY) {
+    @Override
+    public void updateComponent(final double mouseX, final double mouseY) {
         isHovered = isHovered(mouseX, mouseY);
         y = button.frame.getY() + offset;
         x = button.frame.getX();
@@ -62,7 +66,8 @@ public class SliderButton extends Component {
         }
     }
 
-    @Override public void render() {
+    @Override
+    public void render() {
         DrawableHelper.fill(new MatrixStack(), button.frame.getX() + 1, button.frame.getY() + offset, button.frame.getX() + button.frame.getWidth() - 1, button.frame.getY() + offset + 16, isHovered ? new Color(0, 0, 0, 75).getRGB() : new Color(0, 0, 0, 60).getRGB());
         DrawableHelper.fill(new MatrixStack(), button.frame.getX(), button.frame.getY() + offset, (int) (button.frame.getX() + renderWidth), button.frame.getY() + offset + 16,  isHovered ? ClickGUI.color.darker().getRGB() : ClickGUI.color.getRGB());
         Wrapper.mc.textRenderer.draw(new MatrixStack(), setting.getName(),  button.frame.getX() + 5, button.frame.getY() + offset + 3, isHovered ? new Color(170, 170, 170).getRGB() : -1);

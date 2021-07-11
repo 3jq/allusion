@@ -31,9 +31,11 @@ public class ClickGUI extends Screen {
         }
     }
 
-    @Override public boolean isPauseScreen() { return false; }
+    @Override
+    public boolean isPauseScreen() { return false; }
 
-    @Override public void render(MatrixStack matrices, int mouseX, int mouseY, float partialTicks) {
+    @Override
+    public void render(MatrixStack matrices, int mouseX, int mouseY, float partialTicks) {
         color = new Color(ClickGuiModule.INSTANCE.r.getValue().intValue(), ClickGuiModule.INSTANCE.g.getValue().intValue(), ClickGuiModule.INSTANCE.b.getValue().intValue());
         if(ClickGuiModule.INSTANCE.tint.getValue())
             DrawableHelper.fill(new MatrixStack(), 0, 0, Wrapper.mc.getWindow().getScaledWidth(), Wrapper.mc.getWindow().getScaledHeight(), new Color(0, 0, 0, 100).getRGB());
@@ -44,7 +46,8 @@ public class ClickGUI extends Screen {
         });
     }
 
-    @Override public boolean mouseClicked(double mouseX, double mouseY, int mouseButton) {
+    @Override
+    public boolean mouseClicked(double mouseX, double mouseY, int mouseButton) {
         for (final Frame frame : frames) {
             if (frame.isHover(mouseX, mouseY) && mouseButton == 0) {
                 frame.setDrag(true);
@@ -62,7 +65,8 @@ public class ClickGUI extends Screen {
         return false;
     }
 
-    @Override public boolean mouseReleased(double mouseX, double mouseY, int state) {
+    @Override
+    public boolean mouseReleased(double mouseX, double mouseY, int state) {
         for (final Frame frame : frames) {
             frame.setDrag(false);
         }
@@ -80,7 +84,8 @@ public class ClickGUI extends Screen {
         this.fillGradient(new MatrixStack(), left, top, right, bottom, startColor, endColor);
     }
 
-    @Override public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+    @Override
+    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
         for (final Frame frame : ClickGUI.frames) {
             if (frame.isOpen() && keyCode != 1 && !frame.getComponents().isEmpty()) {
                 for (final Component component : frame.getComponents()) {
