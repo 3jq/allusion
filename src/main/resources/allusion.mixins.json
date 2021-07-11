@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "ClientPlayerEntityMixin",
-    "ClientConnectionMixin"
+    "ClientConnectionMixin",
+    "KeyboardMixin"
   ],
   "injectors": {
     "defaultRequire": 1
