@@ -13,6 +13,7 @@ public class Module {
     private String description;
     private Category category;
     private int key = -1;
+    private boolean drawn = true;
 
     private boolean enabled = false;
 
@@ -50,6 +51,10 @@ public class Module {
     public boolean isEnabled() {
         return enabled;
     }
+
+    public void setDrawn(boolean drawn) { this.drawn = drawn; }
+
+    public boolean isDrawn() { return drawn; }
 
     public void toggle() {
         if (isEnabled()) disable();
