@@ -75,6 +75,9 @@ public class KeyButton extends Component {
                 case 346:
                     keyString = new LiteralText("rAlt");
                     break;
+                case -1:
+                    keyString = new LiteralText("NONE");
+                    break;
                 default:
                     keyString = InputUtil.fromKeyCode(button.module.getKey(), -1).getLocalizedText();
             }
