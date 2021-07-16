@@ -12,8 +12,8 @@ public class KeyboardMixin {
 
     @Inject(method = "onKey", at = @At(value = "INVOKE", target = "net/minecraft/client/util/InputUtil.isKeyPressed(JI)Z", ordinal = 5), cancellable = true)
     private void onKeyEvent(long windowPointer, int key, int scanCode, int action, int modifiers, CallbackInfo callbackInfo) {
-        Allusion.moduleManager.modules.forEach(module -> {
-            if (module.getKey() == key) module.toggle();
+        Allusion.moduleManager.modules.forEach((k, m) -> {
+            if (m.getKey() == key) m.toggle();
         });
     }
 

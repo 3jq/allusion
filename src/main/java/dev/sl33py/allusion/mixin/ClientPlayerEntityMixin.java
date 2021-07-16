@@ -15,8 +15,8 @@ public class ClientPlayerEntityMixin {
     @Inject(at = @At("RETURN"), method = "tick()V", cancellable = true)
     public void tick(CallbackInfo info) {
         MinecraftClient mc = MinecraftClient.getInstance();
-        for (Module module : Allusion.moduleManager.modules) {
-            if (module.isEnabled() && mc.player != null && mc.world != null) module.onUpdate();
-        }
+        Allusion.moduleManager.modules.forEach((k, m) -> {
+            if (m.isEnabled() && mc.player != null && mc.world != null) m.onUpdate();
+        });
     }
 }
