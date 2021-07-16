@@ -53,8 +53,8 @@ public class ModuleButton extends Component {
                         continue;
                 }
             }
-            components.add(new KeyButton(this, settingY));
         }
+        components.add(new KeyButton(this, settingY));
     }
 
     @Override
